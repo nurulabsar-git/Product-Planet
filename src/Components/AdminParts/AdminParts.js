@@ -54,9 +54,7 @@ const AdminParts = () => {
       <input name="wight" placeholder="Enter The Wight" ref={register}/> <br/>
       <input name="price" placeholder="Enter The Price" ref={register} /> <br/>
       <input name="made"  placeholder="made by" ref={register} /> <br/>
-      <input type="file" onChange={handleDataUpload} /> <br/>
-     
-      
+      <input type="file" onChange={handleDataUpload} /> <br/> <br/>
       <input type="submit" />
     </form>
         </div>
