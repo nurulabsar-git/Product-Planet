@@ -5,10 +5,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Admin from './Components/Admin/Admin';
 import AdminParts from './Components/AdminParts/AdminParts';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import ManageProduct from './Components/ManageProduct/ManageProduct';
 import Orders from './Components/Orders/Orders';
 
 function App() {
@@ -17,7 +19,10 @@ function App() {
       <Header></Header>
       <Switch>
         <Route path="/admin">
-          <AdminParts></AdminParts>
+         <Admin></Admin>
+        </Route>
+        <Route path="/manageProducts">
+          <ManageProduct></ManageProduct>
         </Route>
         <Route path="/product/:productId">
           <CheckOut></CheckOut>

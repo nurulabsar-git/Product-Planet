@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import SubHomePage from '../SubHomePage/SubHomePage';
 import './Home.css';
 
+export const MyContext = createContext();
 const Home = () => {
 
-    const [productsA, setProductsA] = useState([]);
+    const [products, setProducts] = useState([]);
     useEffect(() => {
     fetch('http://localhost:7070/products')
     .then(res => res.json())
-    .then(data => setProductsA(data))
+    .then(data => setProducts(data))
 
     }, [])
     return (
-        <div className="container">
+        <MyContext.Provider value={[products, setProducts]}>
+                   <div className="container">
             {
-                productsA.map(product => <SubHomePage product = {product}></SubHomePage>)
+                products.map(product => <SubHomePage product = {product}></SubHomePage>)
+
             }
         </div>
+        </MyContext.Provider>
+ 
     );
 };
 

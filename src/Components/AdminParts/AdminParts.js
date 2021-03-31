@@ -50,12 +50,12 @@ const AdminParts = () => {
         <div className="admin-part">
     <form onSubmit={handleSubmit(onSubmit)}>
    
-    <input name="name"  placeholder="Enter The Name" ref={register} /> <br/>
-      <input name="wight" placeholder="Enter The Wight" ref={register}/> <br/>
-      <input name="price" placeholder="Enter The Price" ref={register} /> <br/>
-      <input name="made"  placeholder="made by" ref={register} /> <br/>
-      <input type="file" onChange={handleDataUpload} /> <br/> <br/>
-      <input type="submit" />
+    <input name="name"  placeholder="Enter The Name" ref={register} className="input-style" /> <br/>
+      <input name="wight" placeholder="Enter The Wight" ref={register} className="input-style"/> <br/>
+      <input name="price" placeholder="Enter The Price" ref={register} className="input-style"/> <br/>
+      <input name="made"  placeholder="made by" ref={register} className="input-style" /> <br/>
+      <input type="file" onChange={handleDataUpload} className="input-style" /> <br/> <br/>
+      <input type="submit" className="submit-btn-style"/>
     </form>
         </div>
     );

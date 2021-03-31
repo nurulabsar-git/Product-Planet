@@ -1,7 +1,28 @@
 .admin-part{
-
-    margin: 10px;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 8px;
+    margin: 25px;
     display: grid;
     align-items: center;
     justify-content: center;
+    height: 75vh;
+}
+
+.input-style{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+
+.submit-btn-style{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 4px;
+    background-color: honeydew;
+}
+
+.submit-btn-style:hover {
+    background-color: green;
 }
