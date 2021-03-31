@@ -6,3 +6,12 @@
     text-align: center;
   
   }
+
+  .main-button{
+    background-color: goldenrod;
+    width: 130px;
+    height: 30px;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+}

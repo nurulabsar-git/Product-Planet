@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import AdminParts from './Components/AdminParts/AdminParts';
+import CheckOut from './Components/CheckOut/CheckOut';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 
@@ -16,6 +17,9 @@ function App() {
       <Switch>
         <Route path="/admin">
           <AdminParts></AdminParts>
+        </Route>
+        <Route path="/product/:productId">
+          <CheckOut></CheckOut>
         </Route>
         <Route exact path ="/">
           <Home></Home>
