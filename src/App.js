@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import AdminParts from './Components/AdminParts/AdminParts';
 import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route path="/admin">
           <AdminParts></AdminParts>
+        </Route>
+        <Route exact path ="/">
+          <Home></Home>
         </Route>
       </Switch>
     </Router>
