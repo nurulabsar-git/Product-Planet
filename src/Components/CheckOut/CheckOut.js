@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import './CheckOut.css';
 
 
 const CheckOut = () => {
     const {productId} = useParams();
+    const history = useHistory();
     const [checkOuts, setCheckOuts] = useState({});
      console.log(checkOuts);
     useEffect(() => {
@@ -22,15 +23,15 @@ const CheckOut = () => {
 
 
     
-    const handleCheckOutClick = () => {
-        
+    const handleCheckOutClick = (checkOutParameter) => {
+        history.push(`/checkOut/${checkOutParameter}`);
     }
 
 
 
 
     return (
-        <div style={{textAlign:'center', boxShadow: '4px 4px 6px gray', padding: '20px', margin: '25px', height: '70vh', borderRadius:'8px'}} className="check-out">
+        <div style={{textAlign:'center', boxShadow: '4px 4px 6px gray', padding: '20px', margin: '25px', height: '100vh', borderRadius:'8px'}} className="check-out">
            <div style={{float: 'left', textShadow: '4px 4px 6px green'}}> <h3>Check Out</h3></div> <br/> <br/>
             <section>
             <div className="d-flex justify-content-between border-bottom">
@@ -55,9 +56,9 @@ const CheckOut = () => {
                 <h2>Total</h2>
                 <h4>{checkOuts?.name?.price} $</h4>
                 </div>
-
             </section> <br/>
-            <button onClick={handleCheckOutClick} className="check-button">Check Out</button>
+            <button onClick={()=>handleCheckOutClick(checkOuts?._id)} className="check-button">Check Out</button>
+            <h4>{checkOuts?._id} </h4>
             </div>
     );
 };
