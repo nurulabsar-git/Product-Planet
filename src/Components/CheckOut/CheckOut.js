@@ -7,6 +7,8 @@ const CheckOut = () => {
     const {productId} = useParams();
     const history = useHistory();
     const [checkOuts, setCheckOuts] = useState({});
+
+    
      console.log(checkOuts);
     useEffect(() => {
      fetch('http://localhost:7070/products/')
