@@ -13,6 +13,21 @@ const ManageProduct = () => {
        })
    }, [])
 
+   const deleteEvent = (id) => {
+ 
+    fetch(`http://localhost:7070/deleteProduct/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+         
+          window.location.reload();
+          console.log(data);
+        });
+    }    
+
+
+
     return (
         <div className="m-5" p-5> 
          <section className="m-md-5 p-md-2 d-flex justify-content-between bg-light rounded">
@@ -31,7 +46,7 @@ const ManageProduct = () => {
                   <p className="fw-bolder">{datum.name.price}</p>
                   <div>
                   <button className="bg-warning rounded m-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                  <button className="bg-success rounded"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                  <button onClick={() => deleteEvent(datum._id)} className="bg-success rounded"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                   </div>
                  
               </section>
