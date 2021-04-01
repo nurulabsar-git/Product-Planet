@@ -70,7 +70,7 @@ const CheckOut = () => {
 
             {/* onClick={()=>handleCheckOutClick(checkOuts?._id)}  */}
             </Link>
-            <h4>{checkOuts?._id} </h4>
+            
             </div>
     );
 };
