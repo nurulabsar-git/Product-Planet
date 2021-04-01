@@ -17,6 +17,14 @@ const Home = () => {
      <section>
       
          <div className="container">
+          {
+              products.length === 0 && <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          }
+
             {
                 products.map(product => <SubHomePage product = {product}></SubHomePage>)
 

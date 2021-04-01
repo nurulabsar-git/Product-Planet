@@ -5,6 +5,17 @@
     text-align: center;
    
    }
+
+   @media(max-width:500px){
+    .header{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+     .nav-style{
+         display: flex;
+         justify-content: space-between;
+     }
+   }
    
    .Link{
        margin-right: 15px;

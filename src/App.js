@@ -12,6 +12,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import LogIn from './Components/LogIn/LogIn';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
+import NotFound from './Components/NotFound/NotFound';
 import Orders from './Components/Orders/Orders';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
@@ -39,9 +40,9 @@ function App() {
         <Route path="/AdminParts">
           <AdminParts></AdminParts>
         </Route>
-        <Route path="/product/:productId">
+        <PrivateRoute path="/product/:productId">
           <CheckOut></CheckOut>
-        </Route>
+        </PrivateRoute>
         <Route path="/orders">
           <Orders></Orders>
         </Route>
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route exact path ="/">
           <Home></Home>
+        </Route>
+        <Route path="*">
+          <NotFound></NotFound>
         </Route>
       </Switch>
     </Router>
