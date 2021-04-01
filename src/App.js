@@ -10,35 +10,47 @@ import AdminParts from './Components/AdminParts/AdminParts';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import LogIn from './Components/LogIn/LogIn';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
 import Orders from './Components/Orders/Orders';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
-export const myContext = createContext()
+
+
+
+export const ThemeContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <myContext.Provider value = {[loggedInUser, setLoggedInUser]}> 
+    <ThemeContext.Provider value = {[loggedInUser, setLoggedInUser]}> 
+     <div>
+             <h4 style={{textShadow:'5px 5px 10px gray', textAlign:'center', marginTop: '20px'}} ><i>PRODUCT PLANET</i></h4>
+      </div>
+  
     <Router>
       <Header></Header>
       <Switch>
-        <Route path="/admin">
+        <PrivateRoute path="/admin">
          <Admin></Admin>
-        </Route>
-        <Route path="/manageProducts">
+        </PrivateRoute>
+        <PrivateRoute path="/manageProducts">
           <ManageProduct></ManageProduct>
-        </Route>
-        <Route path="/product/:productId">
+        </PrivateRoute>
+        <PrivateRoute path="/product/:productId">
           <CheckOut></CheckOut>
-        </Route>
+        </PrivateRoute>
         <Route path="/orders/:ordersId">
           <Orders></Orders>
+        </Route>
+        <Route path="/login">
+          <LogIn></LogIn>
         </Route>
         <Route exact path ="/">
           <Home></Home>
         </Route>
       </Switch>
     </Router>
-    </myContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 

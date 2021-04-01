@@ -14,14 +14,15 @@ const Home = () => {
 
     }, [])
     return (
-        
-        <div className="container">
+     <section>
+      
+         <div className="container">
             {
                 products.map(product => <SubHomePage product = {product}></SubHomePage>)
 
             }
         </div>
-        
+     </section>
  
     );
 };
