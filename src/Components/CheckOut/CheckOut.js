@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import './CheckOut.css';
 
 
@@ -7,7 +7,7 @@ const CheckOut = () => {
     const {productId} = useParams();
     const history = useHistory();
     const [checkOuts, setCheckOuts] = useState({});
-
+    const id = {};
     
      console.log(checkOuts);
     useEffect(() => {
@@ -19,6 +19,11 @@ const CheckOut = () => {
           const pd = data.find(datum => datum._id === productId)
           console.log(pd);
           setCheckOuts(pd);
+          window.localStorage.setItem('id', JSON.stringify(pd));
+          window.localStorage.setItem('time', new Date())
+          
+          
+
      })
 
     }, [productId])
@@ -33,6 +38,7 @@ const CheckOut = () => {
 
 
     return (
+        
         <div style={{textAlign:'center', boxShadow: '4px 4px 6px gray', padding: '20px', margin: '25px', height: '100vh', borderRadius:'8px'}} className="check-out">
            <div style={{float: 'left', textShadow: '4px 4px 6px green'}}> <h3>Check Out</h3></div> <br/> <br/>
             <section>
@@ -59,7 +65,11 @@ const CheckOut = () => {
                 <h4>{checkOuts?.name?.price} $</h4>
                 </div>
             </section> <br/>
-            <button onClick={()=>handleCheckOutClick(checkOuts?._id)} className="check-button">Check Out</button>
+            <Link to="/order">
+            <button className="check-button">Check Out</button>
+
+            {/* onClick={()=>handleCheckOutClick(checkOuts?._id)}  */}
+            </Link>
             <h4>{checkOuts?._id} </h4>
             </div>
     );

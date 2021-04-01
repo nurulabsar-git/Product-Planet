@@ -45,7 +45,7 @@ const LogIn = () => {
     return (
         <div className="logIn">
            <div>
-            <h4 style={{textShadow:'2px 2px 4px gray'}}>Please Confirm Your Authenticate</h4>
+            <h4 style={{textShadow:'2px 2px 4px gray'}}>Please Confirm Your Authentication</h4>
            <button onClick={handleGoogleSignIn} style={{width: '50%', borderRadius:'7px', marginTop: '50px'}}><i class="fa fa-google" aria-hidden="true"></i> Sign in with google</button>
            </div>
         </div>

@@ -7,7 +7,7 @@ const Admin = () => {
         <div>
            
            <div style={{marginLeft: '10px'}}>
-           <AdminParts></AdminParts>
+             <h1>hello word</h1>
            </div>
             
         </div>

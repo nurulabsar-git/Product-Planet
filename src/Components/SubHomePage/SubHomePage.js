@@ -21,6 +21,7 @@ const SubHomePage = (props) => {
             <p>${name.price}</p>
             <p>{name.wight} gm</p>
             <button onClick={()=> {handleButtonClick(_id)}} className="main-button">Buy Now</button>
+
          </div>
     );
 };

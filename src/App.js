@@ -36,10 +36,13 @@ function App() {
         <PrivateRoute path="/manageProducts">
           <ManageProduct></ManageProduct>
         </PrivateRoute>
-        <PrivateRoute path="/product/:productId">
+        <Route path="/AdminParts">
+          <AdminParts></AdminParts>
+        </Route>
+        <Route path="/product/:productId">
           <CheckOut></CheckOut>
-        </PrivateRoute>
-        <Route path="/orders/:ordersId">
+        </Route>
+        <Route path="/orders">
           <Orders></Orders>
         </Route>
         <Route path="/login">
@@ -53,5 +56,5 @@ function App() {
     </ThemeContext.Provider>
   );
 }
-
+// /:ordersId
 export default App;

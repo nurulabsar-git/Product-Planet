@@ -22,6 +22,12 @@ const Home = () => {
 
             }
         </div>
+
+        <div className="footer-style">
+            <footer>
+                @All assignment rights are reserved
+            </footer>
+        </div>
      </section>
  
     );

@@ -4,22 +4,31 @@ import { useParams } from 'react-router';
 const Orders = () => {
     const {ordersId} = useParams();
     
+    
+
     const [orders, setOrders] = useState({})
+    const [localStorageData, setLocalStorageData] = useState({})
+    const getTime = window.localStorage.getItem('time');
 
     useEffect(() => {
-      fetch('http://localhost:7070/products/')
-      .then(result => result.json())
-      .then(data => {
-          console.log(data);
-         
-          const or = data.find(singleData => singleData._id === ordersId)
-          console.log(or);
-      })
-
-    }, [ordersId])
+    
+      const getData = JSON.parse(window.localStorage.getItem('id'));
+      console.log(getData); 
+      setLocalStorageData(getData); 
+      }, [])
     return (
-        <div style={{textAlign: 'center', margin:'20px'}}>
-            <h1>Bangladesh</h1>
+        <div style={{margin:'30px', padding: '40px', boxShadow: '4px 4px 8px gray', borderRadius: '8px', height: '60vh', display: 'flex', justifyContent: 'space-between'}}>
+            
+            <div>
+            <h4>Name: {localStorageData?.name?.name}</h4>
+            <h4>Price: $ {localStorageData?.name?.price}</h4>
+            <h4>Wight: {localStorageData?.name?.wight} gm</h4>
+            <h6>Time: {getTime}</h6>
+            </div>
+            <div>
+               <img src={localStorageData.imageURL} style={{width: '70%'}} alt=""/> 
+            </div>
+            
         </div>
     );
 };
