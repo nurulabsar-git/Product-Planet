@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +13,11 @@ import Home from './Components/Home/Home';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
 import Orders from './Components/Orders/Orders';
 
+export const myContext = createContext()
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
+    <myContext.Provider value = {[loggedInUser, setLoggedInUser]}> 
     <Router>
       <Header></Header>
       <Switch>
@@ -35,6 +38,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </myContext.Provider>
   );
 }
 

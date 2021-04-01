@@ -14,14 +14,14 @@ const Home = () => {
 
     }, [])
     return (
-        <MyContext.Provider value={[products, setProducts]}>
-                   <div className="container">
+        
+        <div className="container">
             {
                 products.map(product => <SubHomePage product = {product}></SubHomePage>)
 
             }
         </div>
-        </MyContext.Provider>
+        
  
     );
 };
