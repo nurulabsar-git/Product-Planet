@@ -14,7 +14,7 @@ const AdminParts = () => {
             imageURL: imageURL
 
         };
-        const url =`http://localhost:7070/addGrocery`;
+        const url =`https://banana-surprise-28082.herokuapp.com/addGrocery`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',

@@ -5,7 +5,7 @@ const ManageProduct = () => {
   const [manageProducts, setManageProducts] = useState([])
 
    useEffect(() => {
-       fetch('http://localhost:7070/products')
+       fetch('https://banana-surprise-28082.herokuapp.com/products')
        .then(result => result.json())
        .then(data => {
            console.log(data);
@@ -15,7 +15,7 @@ const ManageProduct = () => {
 
    const deleteEvent = (id) => {
  
-    fetch(`http://localhost:7070/deleteProduct/${id}`, {
+    fetch(`https://banana-surprise-28082.herokuapp.com/deleteProduct/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

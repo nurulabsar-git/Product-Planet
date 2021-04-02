@@ -11,7 +11,7 @@ const CheckOut = () => {
     
      console.log(checkOuts);
     useEffect(() => {
-     fetch('http://localhost:7070/products/')
+     fetch('https://banana-surprise-28082.herokuapp.com/products/')
      .then(result => result.json())
      .then(data => {
     // console.log(data)
